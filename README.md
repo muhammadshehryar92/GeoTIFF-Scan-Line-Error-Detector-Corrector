@@ -1,3 +1,6 @@
+Here is your updated, copy-paste-ready `README.md` populated with your exact GitHub username (`muhammadshehryar92`) and repository name (`GeoTIFF-Scan-Line-Error-Detector-Corrector`).
+
+```markdown
 # GeoTIFF Scan-Line Error Detector & Corrector
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
@@ -38,3 +41,75 @@ This repository provides a lightweight, scriptable Python workflow designed for 
    ```bash
    git clone [https://github.com/muhammadshehryar92/GeoTIFF-Scan-Line-Error-Detector-Corrector.git](https://github.com/muhammadshehryar92/GeoTIFF-Scan-Line-Error-Detector-Corrector.git)
    cd GeoTIFF-Scan-Line-Error-Detector-Corrector
+
+```
+
+2. **Create a virtual environment (recommended):**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+```
+
+
+3. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+
+```
+
+
+
+---
+
+## Quick Start
+
+```python
+import rasterio
+import numpy as np
+from scipy.interpolate import griddata
+
+# Example workflow using the repository's correction module
+from fix_scanline import detect_scanline_mask, repair_geotiff
+
+input_tif = "path/to/corrupted_landsat7_band.tif"
+output_tif = "path/to/repaired_landsat7_band.tif"
+
+# Detect missing scan-line mask and interpolate gaps
+mask = detect_scanline_mask(input_tif, nodata_val=0)
+repair_geotiff(input_tif, output_tif, nodata_val=0, method="linear")
+
+print(f"Repaired GeoTIFF saved to: {output_tif}")
+
+```
+
+---
+
+## Project Structure
+
+```text
+GeoTIFF-Scan-Line-Error-Detector-Corrector/
+├── fix_scanline.py      # Core scan-line detection and interpolation functions
+├── requirements.txt     # Python dependencies (rasterio, numpy, scipy)
+├── LICENSE              # MIT License
+└── README.md            # Project documentation
+
+```
+
+---
+
+## Contributing
+
+Contributions, bug reports, and test datasets (especially multi-band Landsat 7 ETM+ SLC-off scenes) are welcome. Feel free to open an issue or submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the **MIT License** — see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+
+```
+
+*(Note: Just make sure `fix_scanline.py` in the **Quick Start** and **Project Structure** sections matches the exact `.py` filename inside your repository, and change `rasterio` to `osgeo.gdal` if your script uses GDAL instead of Rasterio.)*
+
+```

@@ -36,5 +36,5 @@ This repository provides a lightweight, scriptable Python workflow designed for 
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-   cd your-repo-name
+   git clone [https://github.com/muhammadshehryar92/GeoTIFF-Scan-Line-Error-Detector-Corrector.git](https://github.com/muhammadshehryar92/GeoTIFF-Scan-Line-Error-Detector-Corrector.git)
+   cd GeoTIFF-Scan-Line-Error-Detector-Corrector
